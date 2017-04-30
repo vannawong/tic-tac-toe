@@ -1,0 +1,28 @@
+This file will keep track of goals for the project, and any other useful information.
+
+You'll probably want to start with reading up on JavaFX.  For now, you can run the Main class - see that it creates
+a blank canvas, and play around with it.
+
+Important:
+To get into the practice of using git, and to make sure we don't make project breaking changes, be sure to use
+git branch -b *new branch name*
+before you make any changes.  Also be sure to pull and merge from master occasionally.
+
+For example, I want to create a new branch, so I can make changes to the game window.
+First, I will start from the master branch, and pull from master using this command:
+git checkout master
+git pull
+Then, I will branch from master, onto a new branch with a helpful name:
+git branch -b create-game-window
+
+When I've made my changes, I will commit and then push my new branch to git:
+git add .
+git commit -m "Added 2 buttons"
+git push -u origin create-game-window
+
+Note that you will only need to use -u once.  Once the branch has been pushed to origin (the github repo), you will only
+need to do
+git push
+
+Helpful links:
+http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
