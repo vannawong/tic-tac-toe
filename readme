@@ -24,5 +24,10 @@ Note that you will only need to use -u once.  Once the branch has been pushed to
 need to do
 git push
 
+May 13th:
+A new branch has been created off your branch.  This branch will be merged into yours via a pull request, so you can see what changes were made.  After the merge, you should refactor your code according to the structure here.
+
+A unit test has been added.  You should determine what other test cases you will need to write to be convinced that your code works as it should.  Note that this test passes - but that doesn't mean the code is correct.
+
 Helpful links:
 http://docs.oracle.com/javase/8/javase-clienttechnologies.htm

@@ -1,8 +1,5 @@
+package main;
 
-import java.util.Arrays;
-/**
- * Created by Jun Hao on 5/2/2017.
- */
 public class CheckWin {
 
     int horizontal;
@@ -14,7 +11,6 @@ public class CheckWin {
         this.vertical = y;
         this.player = player;
     }
-
 
     public static void CheckWin(int x, int y, int Player, int[][] myArray) {
         int winCounter = 0;
