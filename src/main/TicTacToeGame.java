@@ -1,6 +1,13 @@
 public class TicTacToeGame {
     private int[][] board;
 
+    public int getPlayerOneScore() {
+        return playerOneScore;
+    }
+
+    private int playerOneScore = 0;
+    private int playerTwoScore = 0;
+
     public int[][] getBoard() {
         return board;
     }
@@ -25,18 +32,22 @@ public class TicTacToeGame {
      */
     public boolean checkRows(Move move) {
         int winCounter = 0;
-        int i = move.row;
+
         for (int j = 0; j < board.length; j++) {
-            if (board[i][j] == move.player) {
+            if (board[move.row][j] == move.player) {
                 winCounter++;
-                if (winCounter == board.length) System.out.println("Player" + move.player + " won.");
+                if (winCounter == board.length) {
+                    System.out.println("Player" + move.player + " won.");
+                    return true;
+                }
                 continue;
             } else {
                 break;
             }
 
         }
-        return true;
+
+        return false;
     }
 
     /**
@@ -44,8 +55,23 @@ public class TicTacToeGame {
      * @param move The move made in the current turn
      */
     public boolean checkColumns(Move move) {
-        // implement this method
-        return true;
+        int winCounter = 0;
+
+        //check column
+        for (int j = 0; j < board.length; j++) {
+            if (board[j][move.column] == move.player) {
+                winCounter++;
+                if (winCounter == board.length) {
+                    System.out.println("Player" + move.player + " won.");
+                    return true;
+                }
+                continue;
+            } else {
+                break;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -53,7 +79,42 @@ public class TicTacToeGame {
      * @param move The move made in the current turn
      */
     public boolean checkDiagonals(Move move) {
-        return true;
+        int winCounter = 0;
+
+        //check diagonal from top left
+        if (move.row == move.column) {
+            for(int k = 0; k < board.length; k++){
+                if(board[k][k] == move.player){
+                    winCounter++;
+                    if (winCounter == board.length) {
+                        System.out.println("Player" + move.player + " won.");
+                        return true;
+                    }
+                    continue;
+                } else {
+                    break;
+                }
+            }
+
+        }
+
+        //check diagonal from bottom left
+        if (move.row + move.column == board.length - 1) {
+            for(int l = 0; l < board.length;l++){
+                if(board[l][board.length-l-1] == move.player){
+                    winCounter++;
+                    if (winCounter == board.length) {
+                        System.out.println("Player" + move.player + " won.");
+                        return true;
+                    }
+                    continue;
+                }  else {
+                    break;
+                }
+            }
+
+        }
+        return false;
     }
 
     /**

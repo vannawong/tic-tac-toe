@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TicTacToeGameTest {
@@ -32,6 +33,12 @@ public class TicTacToeGameTest {
         underTest.setBoard(board);
 
         assertTrue("checkRows should return true", underTest.checkRows(new Move(0, 2, 1)));
+        assertEquals("player one score should increase", 1, underTest.getPlayerOneScore());
+    }
+
+    @Test
+    public void givenPlayerMove_andGameNotEnd_thenNeitherPlayersScoreIncreases() {
+
     }
 
     // sets the given row of the given board to the player
