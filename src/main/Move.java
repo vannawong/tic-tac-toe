@@ -1,5 +1,3 @@
-package main;
-
 /**
  * This class describes a move on the game board.
  */

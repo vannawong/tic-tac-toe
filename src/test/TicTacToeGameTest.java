@@ -1,7 +1,3 @@
-package test;
-
-import main.Move;
-import main.TicTacToeGame;
 import org.junit.Before;
 import org.junit.Test;
 

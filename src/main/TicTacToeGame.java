@@ -1,5 +1,3 @@
-package main;
-
 public class TicTacToeGame {
     private int[][] board;
 
